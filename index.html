@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Internet Connection Detector</title>
+  <style>
+    .status-banner {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 10px;
+      color: white;
+      text-align: center;
+      z-index: 9999;
+      font-family: sans-serif;
+    }
+  </style>
+</head>
+<body>
+
+<script>
+  function showStatus(message, color) {
+    const banner = document.createElement('div');
+    banner.className = 'status-banner';
+    banner.textContent = message;
+    banner.style.backgroundColor = color;
+    document.body.appendChild(banner);
+    
+    setTimeout(() => {
+      banner.remove();
+    }, 3000);
+  }
+
+  // 🔍 Initial check when the page loads
+  if (!navigator.onLine) {
+    showStatus("🚫 You are currently offline.", "red");
+  }
+
+  // 🟢 Online event
+  window.addEventListener('online', () => {
+    showStatus("✅ You are back online!", "green");
+  });
+
+  // 🔴 Offline event
+  window.addEventListener('offline', () => {
+    showStatus("❌ Internet connection lost!", "red");
+  });
+</script>
+
+</body>
+</html>
