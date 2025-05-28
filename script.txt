@@ -39,7 +39,8 @@ window.addEventListener('offline', () => {
   showStatus("❌ Internet connection lost!", "red");
 });
 
-➡️ Jab internet chala jata hai, browser **`offline` event** fire karta hai.
+Jab browser detect karta hai ki internet connection chala gaya, tab offline event trigger hota hai.
+then callback function shows internet connection lost with red banner
 
 And vice varsa with online event listener
 
