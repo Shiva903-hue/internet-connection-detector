@@ -1,9 +1,9 @@
 ➡️ `showStatus()` ek **reusable function** hai jo ek message aur background color leta hai aur page pe top banner show karta hai.
 
-1st we create a div 
-then we give the className to the div so we can link the style 
- fir banner ke andr hum text show kr rahe hai 
-then we add this div to the body
+1st hum ek div create karte hain, usme className dete hain taaki CSS apply ho jaye."
+
+"Phir hum banner ke andar message daalte hain aur body me add kar dete hain."
+
  3 seconds ke baad banner remove ho jayega automatically.
 
 navigator.onLine is used to chek the browser is connected to the internet or not 
@@ -11,7 +11,8 @@ ye do boolean values return krta hai
 true if the  browser is connected to the internet
 false if the browser  is not connected to the internet
 
+we add offline event listener to the browser window to chek the browser is conected to the internet or not 
 Jab browser detect karta hai ki internet connection chala gaya, tab offline event trigger hota hai.
-then callback function shows internet connection lost with red banner
+And  callback function shows message internet connection lost with red banner
 
 And vice varsa with online event listener
