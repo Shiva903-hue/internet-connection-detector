@@ -1,0 +1,48 @@
+
+### ✅ Function to Show Status
+
+function showStatus(message, color) {
+  const banner = document.createElement('div');
+  banner.className = 'status-banner';
+  banner.textContent = message;
+  banner.style.backgroundColor = color;
+  document.body.appendChild(banner);
+  
+  setTimeout(() => {
+    banner.remove();
+  }, 3000);
+}
+
+➡️ `showStatus()` ek **reusable function** hai jo ek message aur background color leta hai aur page pe top banner show karta hai.
+
+1st we create a div 
+then we give the className to the div so we can link the style 
+ fir banner ke andr hum text show kr rahe hai 
+then we add this div to the body
+ 3 seconds ke baad banner remove ho jayega automatically.
+
+### 🔍 Initial Network Status Check
+
+navigator.onLine is used to chek the browser is connected to the internet or not 
+ye do boolean values return krta hai
+true if the  browser is connected to the internet
+false if the browser  is not connected to the internet
+
+if (!navigator.onLine) {
+  showStatus("🚫 You are currently offline.", "red");
+}
+
+
+### ⚡ Realtime Network Change Events
+
+window.addEventListener('offline', () => {
+  showStatus("❌ Internet connection lost!", "red");
+});
+
+➡️ Jab internet chala jata hai, browser **`offline` event** fire karta hai.
+
+And vice varsa with online event listener
+
+## 🎯 Real-Life Usage
+
+Ye feature aapko **progressive web apps**, **live chats**, **streaming platforms** ya **forms** me bohot help karega jahan aapko internet ke status ke hisaab se action lena hota hai (like: pause sync, save offline, show warning).
